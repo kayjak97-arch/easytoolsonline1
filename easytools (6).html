@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EasyTools — Free Everyday Tools</title>
+<meta name="description" content="Simple free tools for everyday work: invoices, receipts, QR codes, percentages, profit and more.">
+<meta name="theme-color" content="#0f172a">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="EasyTools — Free Online Tools">
+<meta property="og:description" content="Fast, simple tools for calculations, documents, QR codes and everyday tasks.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+header{
+  background:linear-gradient(135deg,#0f172a 0%,#172554 48%,#2563eb 100%);
+  color:#fff;
+  padding:22px 20px 92px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+header:after{
+  content:"";
+  position:absolute;
+  width:420px;height:420px;
+  right:-180px;top:-230px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+.nav{
+  max-width:1050px;
+  margin:0 auto 48px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.brand{font-size:21px;font-weight:800;letter-spacing:-.4px}
+.nav a{
+  color:#fff;text-decoration:none;font-weight:700;
+  padding:9px 14px;border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;background:rgba(255,255,255,.08);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 13px;border-radius:999px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  font-size:12px;font-weight:800;letter-spacing:.5px;
+  text-transform:uppercase;
+}
+h1{
+  font-size:clamp(42px,9vw,70px);
+  margin:15px 0 10px;
+  letter-spacing:-3px;
+  line-height:1;
+}
+header p{max-width:650px;margin:0 auto;font-size:18px;line-height:1.6;color:#dbeafe}
+.wrap{max-width:1050px;margin:-48px auto 52px;padding:0 18px;position:relative;z-index:3}
+.tools-heading{
+  background:#fff;
+  border:1px solid #e6eaf0;
+  border-radius:22px;
+  padding:22px 24px;
+  margin:0 0 18px;
+  box-shadow:0 14px 35px rgba(15,23,42,.08);
+}
+.tools-heading h2{margin:0;font-size:25px;letter-spacing:-.7px}
+.tools-heading p{margin:6px 0 0;color:#667085;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{
+  background:#fff;
+  border:1px solid #e6eaf0;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.grid .card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.grid .card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(15,23,42,.10);border-color:#cdd8ee}
+.card h2{font-size:19px;margin:9px 0 7px}
+.card p{color:#667085;font-size:14px;line-height:1.55}
+.icon{
+  width:48px;height:48px;
+  display:grid;place-items:center;
+  border-radius:14px;background:#eef4ff;
+  font-size:25px;
+}
+button{
+  border:0;border-radius:12px;padding:12px 16px;
+  background:#2563eb;color:#fff;font-weight:800;
+  cursor:pointer;width:100%;
+  transition:background .18s ease,transform .18s ease;
+}
+button:hover{background:#1d4ed8;transform:translateY(-1px)}
+.tool{display:none;margin-top:24px}
+.tool.active{display:block}
+.tool input,.tool select,.tool textarea,
+#email{
+  width:100%;padding:13px;
+  border:1px solid #d7dce5;border-radius:11px;
+  margin:6px 0 12px;font-size:16px;
+  background:#fff;color:#172033;
+}
+.result{background:#eef4ff;border-radius:12px;padding:15px;margin-top:10px;font-weight:700;white-space:pre-wrap}
+section.card[style]{max-width:1050px;margin-left:auto!important;margin-right:auto!important}
+footer{text-align:center;padding:32px 18px;color:#667085;font-size:13px}
+@media(max-width:600px){
+  header{padding-bottom:82px}
+  .nav{margin-bottom:38px}
+  .wrap{margin-top:-40px}
+  .tools-heading{padding:19px}
+  h1{letter-spacing:-2px}
+}
+
+.info-grid{max-width:1050px;margin:18px auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 18px}
+.info-card,.faq,.legal{background:#fff;border:1px solid #e6eaf0;border-radius:20px;box-shadow:0 10px 28px rgba(15,23,42,.06)}
+.info-card{padding:24px}
+.info-label{display:inline-block;font-size:11px;font-weight:900;letter-spacing:1.2px;color:#2563eb;margin-bottom:9px}
+.info-card h2,.faq h2,.legal h2{margin:0 0 8px;font-size:23px;letter-spacing:-.6px}
+.info-card p,.faq p,.legal p{color:#667085;line-height:1.65;font-size:14px}
+.mini-points{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:17px;font-size:13px;font-weight:700;color:#344054}
+.contact-note{margin-top:16px;padding:12px 14px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;color:#667085;font-size:13px}
+.faq,.legal{max-width:1050px;margin:18px auto;padding:24px}
+details{border-top:1px solid #edf0f4;padding:15px 0}
+details:first-of-type{margin-top:10px}
+summary{cursor:pointer;font-weight:800;color:#172033}
+.legal p:last-child{margin-bottom:0}
+footer{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 18px;text-align:center;padding:34px 18px;color:#667085;font-size:13px}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:#475467;text-decoration:none;font-weight:700}
+.footer-links a:hover{text-decoration:underline}
+@media(max-width:700px){
+  .info-grid{grid-template-columns:1fr}
+  .mini-points{grid-template-columns:1fr}
+  .info-card,.faq,.legal{padding:20px}
+}
+
+</style>
+
+</head>
+<body>
+<header>
+<nav class="nav"><div class="brand">EasyTools</div><a href="#tools">Browse tools</a></nav>
+<div class="hero-badge">✦ Simple tools · No signup</div>
+<h1>EasyTools</h1><p>Simple, fast and free tools that make everyday work easier.</p>
+</header>
+<main class="wrap"><section class="tools-heading" id="tools"><h2>Free Online Tools</h2><p>Quick, practical tools for work, business and everyday tasks.</p></section>
+<section class="grid">
+<div class="card"><div class="icon">💰</div><h2>Percentage Calculator</h2><p>Calculate percentages in seconds.</p><button onclick="openTool('percent')">Open tool</button></div>
+<div class="card"><div class="icon">🧮</div><h2>Age Calculator</h2><p>Calculate age from a date of birth.</p><button onclick="openTool('age')">Open tool</button></div>
+<div class="card"><div class="icon">🧾</div><h2>Receipt Maker</h2><p>Create a simple receipt for a customer.</p><button onclick="openTool('receipt')">Open tool</button></div>
+<div class="card"><div class="icon">📦</div><h2>Unit Converter</h2><p>Convert common length and weight units.</p><button onclick="openTool('units')">Open tool</button></div>
+<div class="card"><div class="icon">📝</div><h2>Word Counter</h2><p>Count words, characters and sentences.</p><button onclick="openTool('words')">Open tool</button></div>
+<div class="card"><div class="icon">🔢</div><h2>Discount Calculator</h2><p>Find sale prices and savings instantly.</p><button onclick="openTool('discount')">Open tool</button></div>
+<div class="card"><div class="icon">📈</div><h2>Profit Calculator</h2><p>See your profit and profit margin.</p><button onclick="openTool('profit')">Open tool</button></div>
+<div class="card"><div class="icon">🧾</div><h2>Invoice Maker</h2><p>Create a clean invoice instantly.</p><button onclick="openTool('invoice')">Open tool</button></div>
+<div class="card"><div class="icon">🔗</div><h2>QR Code Generator</h2><p>Turn any text or link into a QR code.</p><button onclick="openTool('qr')">Open tool</button></div>
+</section>
+
+<section id="percent" class="card tool"><h2>Percentage Calculator</h2>
+<input id="p1" type="number" placeholder="Percentage e.g. 15"><input id="p2" type="number" placeholder="Number e.g. 200">
+<button onclick="calcPercent()">Calculate</button><div id="pr" class="result"></div></section>
+
+<section id="age" class="card tool"><h2>Age Calculator</h2>
+<input id="dob" type="date"><button onclick="calcAge()">Calculate Age</button><div id="ager" class="result"></div></section>
+
+<section id="discount" class="card tool"><h2>Discount Calculator</h2>
+<input id="original" type="number" placeholder="Original price"><input id="discountPct" type="number" placeholder="Discount %">
+<button onclick="calcDiscount()">Calculate</button><div id="discountr" class="result"></div></section>
+
+<section id="receipt" class="card tool"><h2>Receipt Maker</h2>
+<input id="rname" placeholder="Customer name">
+<input id="ritem" placeholder="Item / service">
+<input id="ramount" type="number" placeholder="Amount">
+<button onclick="makeReceipt()">Create Receipt</button><div id="receiptr" class="result"></div></section>
+
+<section id="units" class="card tool"><h2>Unit Converter</h2>
+<input id="unitval" type="number" placeholder="Enter value">
+<select id="unitfrom" style="width:100%;padding:13px;border:1px solid #d7dce5;border-radius:10px;margin:6px 0">
+<option value="m">Meters</option><option value="km">Kilometers</option><option value="ft">Feet</option><option value="kg">Kilograms</option><option value="lb">Pounds</option>
+</select>
+<select id="unitto" style="width:100%;padding:13px;border:1px solid #d7dce5;border-radius:10px;margin:6px 0">
+<option value="m">Meters</option><option value="km">Kilometers</option><option value="ft">Feet</option><option value="kg">Kilograms</option><option value="lb">Pounds</option>
+</select>
+<button onclick="convertUnit()">Convert</button><div id="unitr" class="result"></div></section>
+
+<section id="words" class="card tool"><h2>Word Counter</h2>
+<textarea id="wordtext" placeholder="Paste or type your text here..." style="width:100%;min-height:150px;padding:13px;border:1px solid #d7dce5;border-radius:10px;font-size:16px"></textarea>
+<button onclick="countWords()">Count</button><div id="wordr" class="result"></div></section>
+
+<section id="profit" class="card tool"><h2>Profit Calculator</h2>
+<input id="cost" type="number" placeholder="Cost price"><input id="sell" type="number" placeholder="Selling price">
+<button onclick="calcProfit()">Calculate</button><div id="profr" class="result"></div></section>
+
+<section id="invoice" class="card tool"><h2>Quick Invoice</h2>
+<input id="client" placeholder="Customer name"><input id="item" placeholder="Item / service"><input id="price" type="number" placeholder="Amount">
+<button onclick="makeInvoice()">Generate</button><div id="invr" class="result"></div></section>
+
+<section id="qr" class="card tool"><h2>QR Code Generator</h2>
+<input id="qrtext" placeholder="Enter a link or text">
+<button onclick="makeQR()">Generate QR</button><div id="qrr" class="result"></div></section>
+</main>
+<section class="card" style="margin-top:24px;text-align:center">
+<h2>💎 Go Pro when you need more</h2>
+<p>EasyTools will keep its core tools free. Premium can later unlock PDF downloads, saved templates, custom branding and advanced tools.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;text-align:left;margin:18px 0">
+<div>✓ Unlimited documents</div><div>✓ Premium templates</div><div>✓ PDF export</div><div>✓ No ads</div>
+</div>
+<h2>⭐ EasyTools Pro — Coming Soon</h2>
+<p>Premium features will include downloadable PDFs, advanced templates and more business tools.</p>
+<button onclick="alert('Pro is coming soon — stay tuned!')">Join the waitlist</button>
+</section>
+<section class="card" style="margin-top:16px;text-align:center">
+<h2>📬 Get new tools first</h2>
+<p>Leave your email for launch updates. We’ll connect this to a real email service before publishing.</p>
+<input id="email" type="email" placeholder="you@example.com">
+<button onclick="saveEmail()">Notify me</button>
+<div id="emailr" class="result" style="display:none"></div>
+</section>
+
+<section class="info-grid">
+  <section class="info-card" id="about">
+    <span class="info-label">ABOUT EASYTOOLS</span>
+    <h2>Useful tools without the hassle.</h2>
+    <p>EasyTools is a simple collection of free browser-based tools for everyday work, small businesses, students and personal tasks.</p>
+    <div class="mini-points">
+      <span>✓ No signup for core tools</span>
+      <span>✓ Mobile friendly</span>
+      <span>✓ Fast and simple</span>
+      <span>✓ Free to use</span>
+    </div>
+  </section>
+
+  <section class="info-card" id="contact">
+    <span class="info-label">CONTACT</span>
+    <h2>Have a suggestion?</h2>
+    <p>Tell us which tool you would like to see next. For now, you can contact the site owner through the email address configured for the published website.</p>
+    <div class="contact-note">Contact details will be added before launch.</div>
+  </section>
+</section>
+
+<section class="faq card">
+  <span class="info-label">FAQ</span>
+  <h2>Frequently asked questions</h2>
+  <details>
+    <summary>Are the free tools really free?</summary>
+    <p>Yes. The core tools are designed to remain free. Optional premium features may be introduced later.</p>
+  </details>
+  <details>
+    <summary>Do I need to create an account?</summary>
+    <p>No account is required for the current core tools.</p>
+  </details>
+  <details>
+    <summary>Is EasyTools ready for publishing?</summary>
+    <p>The site is ready for the hosting step. Email collection, analytics, advertising and payments should only be connected after their respective services are configured.</p>
+  </details>
+</section>
+
+<section class="legal card" id="privacy">
+  <span class="info-label">PRIVACY</span>
+  <h2>Privacy Policy</h2>
+  <p>EasyTools is designed to minimize data collection. The current browser tools process the information you enter to produce results on the page. We do not currently operate a user account system or database for the tools.</p>
+  <p>If analytics, advertising, contact forms or other third-party services are added, this policy should be updated to explain what information those services collect and why.</p>
+</section>
+
+<section class="legal card" id="terms">
+  <span class="info-label">TERMS</span>
+  <h2>Terms of Use</h2>
+  <p>EasyTools provides general-purpose tools for convenience. Results should be checked before being used for important financial, business or other decisions.</p>
+  <p>By using the site, you agree to use the tools lawfully and responsibly. Features may be changed, improved or removed as the service develops.</p>
+</section>
+
+<footer><strong>EasyTools</strong><div class="footer-links"><a href="#tools">Tools</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a></div><span>© 2026 EasyTools · Free tools for everyone.</span></footer>
+<script>
+function openTool(id){document.querySelectorAll('.tool').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.getElementById(id).scrollIntoView({behavior:'smooth',block:'center'})}
+function calcPercent(){let a=+p1.value,b=+p2.value;pr.textContent=isFinite(a*b/100)?`${a}% of ${b} = ${a*b/100}`:'Enter valid numbers'}
+function makeReceipt(){let now=new Date().toLocaleDateString();receiptr.textContent=`RECEIPT\nDate: ${now}\nCustomer: ${rname.value||'—'}\nItem: ${ritem.value||'—'}\nAmount: ${ramount.value||'0'}`}
+function countWords(){let t=wordtext.value.trim(),w=t?t.split(/\\s+/).length:0,c=t.length,s=t?t.split(/[.!?]+/).filter(x=>x.trim()).length:0;wordr.textContent=`Words: ${w}\nCharacters: ${c}\nSentences: ${s}`}
+function convertUnit(){let v=+unitval.value,f=unitfrom.value,t=unitto.value;if(!isFinite(v)){unitr.textContent='Enter a valid number';return}let length={m:1,km:1000,ft:.3048},weight={kg:1,lb:.453592};let group=['m','km','ft'].includes(f)&&['m','km','ft'].includes(t)?length:(['kg','lb'].includes(f)&&['kg','lb'].includes(t)?weight:null);if(!group){unitr.textContent='Choose units from the same category';return}unitr.textContent=`${v} ${f} = ${(v*group[f]/group[t]).toFixed(4).replace(/\\.?0+$/,'')} ${t}`}
+function calcProfit(){let c=+cost.value,s=+sell.value,p=s-c,m=c?(p/c*100):0;profr.textContent=isFinite(p)?`Profit: ${p.toFixed(2)}\nProfit margin: ${m.toFixed(2)}%`:'Enter valid numbers'}
+function calcAge(){if(!dob.value){ager.textContent='Choose your birth date';return}let b=new Date(dob.value),n=new Date();let age=n.getFullYear()-b.getFullYear();let m=n.getMonth()-b.getMonth();if(m<0||(m===0&&n.getDate()<b.getDate()))age--;ager.textContent=`You are ${age} years old.`}
+function calcDiscount(){let o=+original.value,d=+discountPct.value;if(!isFinite(o)||!isFinite(d)){discountr.textContent='Enter valid numbers';return}let save=o*d/100;discountr.textContent=`You save: ${save.toFixed(2)}\nFinal price: ${(o-save).toFixed(2)}`}
+function makeInvoice(){invr.textContent=`INVOICE\nCustomer: ${client.value||'—'}\nItem: ${item.value||'—'}\nAmount: ${price.value||'0'}`}
+function makeQR(){let t=encodeURIComponent(qrtext.value);if(!qrtext.value){qrr.textContent='Enter text or a link';return}qrr.innerHTML=`<img alt="QR code" style="max-width:220px" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${t}">`}
+function saveEmail(){let e=email.value.trim();if(!e||!e.includes('@')){emailr.style.display='block';emailr.textContent='Please enter a valid email.';return}emailr.style.display='block';emailr.textContent='Thanks! We’ll connect the mailing list before launch.';email.value=''}
+</script>
+</body></html>
