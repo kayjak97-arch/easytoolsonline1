@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>EasyTools — Free Online Tools for Everyday Tasks</title>
-<meta name="description" content="EasyTools gives you fast, free browser tools for calculations, invoices, receipts, QR codes, text and everyday tasks. No signup required.">
+<title>EasyTools — Free Calculators, Converters & Online Tools</title>
+<meta name="description" content="Free online calculators, converters, invoice and receipt makers, QR codes, text tools and everyday utilities. Fast, mobile-friendly and no signup required.">
 <meta name="theme-color" content="#0f172a">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="EasyTools — Free Online Tools">
@@ -48,7 +48,7 @@ footer{padding:32px 18px 42px;text-align:center;color:#667085;font-size:13px}.fo
 </section>
 
 <section class="stats">
-<div class="stat"><strong>12+</strong><span>free tools</span></div>
+<div class="stat"><strong>22+</strong><span>free tools</span></div>
 <div class="stat"><strong>0</strong><span>signup required</span></div>
 <div class="stat"><strong>100%</strong><span>browser friendly</span></div>
 </section>
@@ -65,7 +65,19 @@ footer{padding:32px 18px 42px;text-align:center;color:#667085;font-size:13px}.fo
 <div class="card tool-card" data-name="unit converter"><div class="icon">📦</div><h3>Unit Converter</h3><p>Convert common length and weight units.</p><button onclick="openTool('units')">Open tool</button></div>
 <div class="card tool-card" data-name="word counter"><div class="icon">📝</div><h3>Word Counter</h3><p>Count words, characters and sentences.</p><button onclick="openTool('words')">Open tool</button></div>
 <div class="card tool-card" data-name="qr code generator"><div class="icon">🔗</div><h3>QR Code Generator</h3><p>Turn text or a link into a QR code.</p><button onclick="openTool('qr')">Open tool</button></div>
+
+<div class="card tool-card" data-name="percentage change calculator percent change"><div class="icon">↕️</div><h3>Percentage Change</h3><p>Find the increase or decrease between two numbers.</p><button onclick="openTool('pctchange')">Open tool</button></div>
+<div class="card tool-card" data-name="compound interest calculator savings"><div class="icon">💎</div><h3>Compound Interest</h3><p>Estimate growth from an initial amount and regular compounding.</p><button onclick="openTool('compound')">Open tool</button></div>
+<div class="card tool-card" data-name="loan payment calculator monthly payment"><div class="icon">🏦</div><h3>Loan Payment</h3><p>Estimate a monthly payment from loan amount, rate and term.</p><button onclick="openTool('loan')">Open tool</button></div>
+<div class="card tool-card" data-name="date difference calculator days between dates"><div class="icon">📅</div><h3>Date Difference</h3><p>Count the days between two dates.</p><button onclick="openTool('datediff')">Open tool</button></div>
+<div class="card tool-card" data-name="password generator secure password"><div class="icon">🔐</div><h3>Password Generator</h3><p>Create a random password in your browser.</p><button onclick="openTool('password')">Open tool</button></div>
+<div class="card tool-card" data-name="average calculator mean average"><div class="icon">➗</div><h3>Average Calculator</h3><p>Calculate the average of a list of numbers.</p><button onclick="openTool('average')">Open tool</button></div>
 <div class="card tool-card" data-name="case converter text converter"><div class="icon">Aa</div><h3>Case Converter</h3><p>Change text to upper, lower or title case.</p><button onclick="openTool('case')">Open tool</button></div>
+<div class="card tool-card" data-name="english dictionary word definition thesaurus"><div class="icon">📖</div><h3>English Dictionary</h3><p>Look up definitions, pronunciation and examples for English words.</p><button onclick="openTool('dictionary')">Open tool</button></div>
+<div class="card tool-card" data-name="paragraph improver writing rewrite english"><div class="icon">✨</div><h3>Paragraph Improver</h3><p>Clean up wording, spacing and common writing issues in a paragraph.</p><button onclick="openTool('improver')">Open tool</button></div>
+<div class="card tool-card" data-name="grammar fixer english grammar checker"><div class="icon">✅</div><h3>English Grammar Fixer</h3><p>Fix common grammar, capitalization and punctuation mistakes.</p><button onclick="openTool('grammar')">Open tool</button></div>
+<div class="card tool-card" data-name="text to speech voice reader"><div class="icon">🔊</div><h3>Text to Speech</h3><p>Listen to your text with your device's available voices.</p><button onclick="openTool('tts')">Open tool</button></div>
+<div class="card tool-card" data-name="reading time calculator words per minute"><div class="icon">⏱️</div><h3>Reading Time</h3><p>Estimate how long your text takes to read.</p><button onclick="openTool('reading')">Open tool</button></div>
 </section>
 
 <section id="percent" class="card tool"><h2>Percentage Calculator</h2><input id="p1" type="number" placeholder="Percentage e.g. 15"><input id="p2" type="number" placeholder="Number e.g. 200"><button onclick="calcPercent()">Calculate</button><div id="pr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
@@ -79,7 +91,19 @@ footer{padding:32px 18px 42px;text-align:center;color:#667085;font-size:13px}.fo
 <section id="units" class="card tool"><h2>Unit Converter</h2><input id="unitval" type="number" placeholder="Enter value"><select id="unitfrom"><option value="m">Meters</option><option value="km">Kilometers</option><option value="ft">Feet</option><option value="kg">Kilograms</option><option value="lb">Pounds</option></select><select id="unitto"><option value="m">Meters</option><option value="km">Kilometers</option><option value="ft">Feet</option><option value="kg">Kilograms</option><option value="lb">Pounds</option></select><button onclick="convertUnit()">Convert</button><div id="unitr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
 <section id="words" class="card tool"><h2>Word Counter</h2><textarea id="wordtext" placeholder="Paste or type your text here..."></textarea><button onclick="countWords()">Count</button><div id="wordr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
 <section id="qr" class="card tool"><h2>QR Code Generator</h2><input id="qrtext" placeholder="Enter a link or text"><button onclick="makeQR()">Generate QR</button><div id="qrr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+
+<section id="pctchange" class="card tool"><h2>Percentage Change</h2><input id="pcOld" type="number" placeholder="Original value"><input id="pcNew" type="number" placeholder="New value"><button onclick="calcPctChange()">Calculate</button><div id="pcr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="compound" class="card tool"><h2>Compound Interest</h2><input id="ciPrincipal" type="number" placeholder="Starting amount"><input id="ciRate" type="number" placeholder="Annual interest rate %"><input id="ciYears" type="number" placeholder="Years"><select id="ciFreq"><option value="1">Yearly</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option><option value="365">Daily</option></select><button onclick="calcCompound()">Calculate</button><div id="cir" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="loan" class="card tool"><h2>Loan Payment Calculator</h2><input id="loanAmt" type="number" placeholder="Loan amount"><input id="loanRate" type="number" placeholder="Annual interest rate %"><input id="loanYears" type="number" placeholder="Term in years"><button onclick="calcLoan()">Calculate</button><div id="loanr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="datediff" class="card tool"><h2>Date Difference</h2><input id="dateA" type="date"><input id="dateB" type="date"><button onclick="calcDateDiff()">Calculate</button><div id="ddr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="password" class="card tool"><h2>Password Generator</h2><input id="passLen" type="number" min="6" max="64" value="16" placeholder="Length"><label><input id="passSymbols" type="checkbox" checked> Include symbols</label><button onclick="generatePassword()">Generate Password</button><div id="passr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="average" class="card tool"><h2>Average Calculator</h2><textarea id="avgText" placeholder="Enter numbers separated by commas or spaces"></textarea><button onclick="calcAverage()">Calculate</button><div id="avgr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
 <section id="case" class="card tool"><h2>Case Converter</h2><textarea id="casetext" placeholder="Paste your text here..."></textarea><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><button onclick="convertCase('upper')">UPPER</button><button onclick="convertCase('lower')">lower</button><button onclick="convertCase('title')">Title</button></div><div id="caser" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="dictionary" class="card tool"><h2>English Dictionary</h2><input id="dictWord" placeholder="Enter an English word e.g. resilient" autocomplete="off"><button onclick="lookupWord()">Look up word</button><div id="dictr" class="result">Type a word to see its definition.</div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="improver" class="card tool"><h2>Paragraph Improver</h2><p style="color:#667085">This browser tool improves clarity using built-in writing rules. It does not pretend to be an AI human editor.</p><textarea id="improveText" placeholder="Paste a paragraph here..."></textarea><button onclick="improveParagraph()">Improve Paragraph</button><div id="improverr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="grammar" class="card tool"><h2>English Grammar Fixer</h2><textarea id="grammarText" placeholder="Paste your English text here..."></textarea><button onclick="fixGrammar()">Fix Common Errors</button><div id="grammarr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="tts" class="card tool"><h2>Text to Speech</h2><textarea id="ttsText" placeholder="Type or paste text to hear it..."></textarea><select id="ttsVoice"><option value="">Default device voice</option></select><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button onclick="speakText()">▶ Speak</button><button class="close" onclick="stopSpeaking()">■ Stop</button></div><div id="ttsr" class="result">Your device's available voices will appear above.</div><button class="close" onclick="closeTools()">Close</button></section>
+<section id="reading" class="card tool"><h2>Reading Time Calculator</h2><textarea id="readingText" placeholder="Paste your article or paragraph here..."></textarea><input id="wpm" type="number" min="80" max="1000" value="200" placeholder="Reading speed (words per minute)"><button onclick="calcReadingTime()">Calculate Reading Time</button><div id="readingr" class="result"></div><button class="close" onclick="closeTools()">Close</button></section>
 
 <section class="features">
 <div class="panel feature"><b>⚡ Fast</b><span>Most tools work instantly in your browser.</span></div>
@@ -98,6 +122,17 @@ footer{padding:32px 18px 42px;text-align:center;color:#667085;font-size:13px}.fo
 <section class="card info-card" id="contact"><span class="label">CONTACT</span><h2>Have a suggestion?</h2><p>We’re building EasyTools around practical requests. A real contact email will be added before the site begins collecting messages or subscriber data.</p></section>
 </section>
 
+
+<section class="card info-card" id="guides">
+<span class="label">QUICK GUIDES</span>
+<h2>Free calculators for everyday decisions</h2>
+<p>EasyTools helps you calculate percentages, discounts, profit margins, tips, loan payments, compound interest, averages and more. Enter your numbers, check the result, and keep your work moving without creating an account.</p>
+<div class="info-grid">
+<div class="card"><h3>How to calculate a percentage</h3><p>To find a percentage of a number, multiply the number by the percentage and divide by 100. EasyTools does the arithmetic for you.</p></div>
+<div class="card"><h3>How to calculate profit margin</h3><p>Profit is selling price minus cost. Profit margin is profit divided by selling price, expressed as a percentage.</p></div>
+<div class="card"><h3>How to calculate a discount</h3><p>Multiply the original price by the discount percentage to find the savings, then subtract the savings from the original price.</p></div>
+</div>
+</section>
 <section class="card faq"><span class="label">FAQ</span><h2>Frequently asked questions</h2><details><summary>Are the tools free?</summary><p>Yes. The current core tools are free to use.</p></details><details><summary>Do I need an account?</summary><p>No account is required for the current tools.</p></details><details><summary>Will there be premium tools?</summary><p>Potentially. Premium features will only be activated after payment and data-handling services are properly configured.</p></details></section>
 <section class="card legal" id="privacy"><span class="label">PRIVACY</span><h2>Privacy Policy</h2><p>The current tools are designed to process your entries in the browser and do not require an EasyTools account. If analytics, advertising, contact forms or other third-party services are added, this policy will be updated to explain their data practices.</p></section>
 <section class="card legal" id="terms"><span class="label">TERMS</span><h2>Terms of Use</h2><p>EasyTools provides general-purpose tools for convenience. Check results before relying on them for important financial, business or other decisions. Use the service lawfully and responsibly.</p></section>
@@ -121,6 +156,107 @@ function convertUnit(){let v=+unitval.value,f=unitfrom.value,t=unitto.value;if(!
 function countWords(){let t=wordtext.value.trim(),w=t?t.split(/\s+/).length:0,c=t.length,s=t?t.split(/[.!?]+/).filter(x=>x.trim()).length:0;wordr.textContent=`Words: ${w}\nCharacters: ${c}\nSentences: ${s}`}
 function makeQR(){let t=qrtext.value.trim();if(!t){qrr.textContent='Enter text or a link';return}qrr.innerHTML=`<img alt="Generated QR code" style="max-width:220px;border-radius:10px" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(t)}">`}
 function convertCase(mode){let t=casetext.value;if(!t){caser.textContent='Enter some text first';return}if(mode==='upper')caser.textContent=t.toUpperCase();else if(mode==='lower')caser.textContent=t.toLowerCase();else caser.textContent=t.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase())}
+
+function calcPctChange(){
+  let a=+pcOld.value,b=+pcNew.value;
+  if(!valid(a,b)||a===0){pcr.textContent='Enter valid values; original value cannot be 0';return}
+  let change=(b-a)/Math.abs(a)*100;
+  pcr.textContent=`Change: ${change.toFixed(2)}%`;
+}
+function calcCompound(){
+  let p=+ciPrincipal.value,r=+ciRate.value,y=+ciYears.value,n=+ciFreq.value;
+  if(!valid(p,r,y,n)||p<0||y<0||n<1){cir.textContent='Enter valid values';return}
+  let amount=p*Math.pow(1+r/100/n,n*y),interest=amount-p;
+  cir.textContent=`Final amount: ${amount.toFixed(2)}\nInterest earned: ${interest.toFixed(2)}`;
+}
+function calcLoan(){
+  let p=+loanAmt.value,r=+loanRate.value,y=+loanYears.value;
+  if(!valid(p,r,y)||p<=0||y<=0||r<0){loanr.textContent='Enter valid loan details';return}
+  let months=y*12, m=r/100/12;
+  let payment=m===0?p/months:p*m*Math.pow(1+m,months)/(Math.pow(1+m,months)-1);
+  loanr.textContent=`Estimated monthly payment: ${payment.toFixed(2)}\nTotal payments: ${(payment*months).toFixed(2)}`;
+}
+function calcDateDiff(){
+  if(!dateA.value||!dateB.value){ddr.textContent='Choose both dates';return}
+  let a=new Date(dateA.value+'T00:00:00'),b=new Date(dateB.value+'T00:00:00');
+  let days=Math.round(Math.abs(b-a)/86400000);
+  ddr.textContent=`Difference: ${days} day${days===1?'':'s'}`;
+}
+function generatePassword(){
+  let len=Math.max(6,Math.min(64,parseInt(passLen.value||16,10)));
+  let chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  if(passSymbols.checked) chars+='!@#$%^&*()-_=+[]{}';
+  let out='';
+  if(window.crypto&&crypto.getRandomValues){
+    let arr=new Uint32Array(len); crypto.getRandomValues(arr);
+    for(let i=0;i<len;i++) out+=chars[arr[i]%chars.length];
+  }else{
+    for(let i=0;i<len;i++) out+=chars[Math.floor(Math.random()*chars.length)];
+  }
+  passr.textContent=out;
+}
+function calcAverage(){
+  let nums=avgText.value.split(/[\s,]+/).map(Number).filter(Number.isFinite);
+  if(!nums.length){avgr.textContent='Enter some numbers first';return}
+  let avg=nums.reduce((a,b)=>a+b,0)/nums.length;
+  avgr.textContent=`Average: ${avg.toFixed(4).replace(/\.?0+$/,'')}\nNumbers: ${nums.length}`;
+}
+
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+async function lookupWord(){
+  const word=dictWord.value.trim().toLowerCase();
+  if(!word){dictr.textContent='Enter an English word first';return}
+  dictr.textContent='Looking up definition…';
+  try{
+    const res=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(word));
+    if(!res.ok) throw new Error('Word not found');
+    const data=await res.json(); const entry=data[0];
+    let out=(entry.word||word).toUpperCase();
+    if(entry.phonetic) out+='\nPronunciation: '+entry.phonetic;
+    (entry.meanings||[]).slice(0,3).forEach(m=>{out+='\n\n'+m.partOfSpeech; (m.definitions||[]).slice(0,2).forEach(d=>{out+='\n• '+d.definition+(d.example?'\n  Example: '+d.example:'')})});
+    dictr.textContent=out;
+  }catch(e){dictr.textContent='Sorry, no definition was found. Check the spelling or try another English word.'}
+}
+function improveParagraph(){
+  let t=improveText.value.trim();
+  if(!t){improverr.textContent='Paste a paragraph first';return}
+  t=t.replace(/\s+/g,' ').replace(/\s+([,.!?;:])/g,'$1').replace(/([,.!?;:])(?=[A-Za-z])/g,'$1 ');
+  t=t.replace(/\b(very very|really really|so so)\b/gi,m=>m.split(' ')[0]);
+  t=t.replace(/\bi am\b/gi,'I am').replace(/\bi have\b/gi,'I have').replace(/\bi think\b/gi,'I think');
+  t=t.replace(/(^|[.!?]\s+)([a-z])/g,(m,p,c)=>p+c.toUpperCase());
+  t=t.replace(/\bi\b/g,'I');
+  improverr.textContent=t;
+}
+function fixGrammar(){
+  let t=grammarText.value.trim();
+  if(!t){grammarr.textContent='Paste some English text first';return}
+  t=t.replace(/\s+/g,' ').replace(/\s+([,.!?;:])/g,'$1').replace(/([,.!?;:])(?=[A-Za-z])/g,'$1 ');
+  const fixes=[[/\bteh\b/gi,'the'],[/\brecieve\b/gi,'receive'],[/\bseperate\b/gi,'separate'],[/\bdefinately\b/gi,'definitely'],[/\byour welcome\b/gi,"you're welcome"],[/\bthere is many\b/gi,'there are many'],[/\bthey was\b/gi,'they were'],[/\bhe have\b/gi,'he has'],[/\bshe have\b/gi,'she has'],[/\bi has\b/gi,'I have'],[/\bi is\b/gi,'I am']];
+  fixes.forEach(([a,b])=>t=t.replace(a,b));
+  t=t.replace(/(^|[.!?]\s+)([a-z])/g,(m,p,c)=>p+c.toUpperCase()).replace(/\bi\b/g,'I');
+  grammarr.textContent=t;
+}
+function calcReadingTime(){
+  const t=readingText.value.trim(); const speed=Math.max(80,Math.min(1000,Number(wpm.value)||200));
+  const words=t?t.split(/\s+/).length:0; if(!words){readingr.textContent='Paste some text first';return}
+  const minutes=words/speed; const mins=Math.floor(minutes); const secs=Math.round((minutes-mins)*60);
+  readingr.textContent=`Words: ${words}\nEstimated reading time: ${mins?mins+' min ':''}${secs} sec\nBased on ${speed} words per minute.`;
+}
+let voices=[];
+function loadVoices(){
+  if(!('speechSynthesis' in window)) return;
+  voices=window.speechSynthesis.getVoices(); const sel=document.getElementById('ttsVoice'); if(!sel)return;
+  const current=sel.value; sel.innerHTML='<option value="">Default device voice</option>';
+  voices.forEach((v,i)=>{const o=document.createElement('option');o.value=i;o.textContent=v.name+' ('+v.lang+')';sel.appendChild(o)}); if(current)sel.value=current;
+}
+if('speechSynthesis' in window){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices;}
+function speakText(){
+  const text=ttsText.value.trim(); if(!text){ttsr.textContent='Enter some text first';return}
+  if(!('speechSynthesis' in window)){ttsr.textContent='Text-to-speech is not supported in this browser.';return}
+  window.speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); const i=Number(ttsVoice.value); if(Number.isInteger(i)&&voices[i])u.voice=voices[i]; u.onstart=()=>ttsr.textContent='Speaking…'; u.onend=()=>ttsr.textContent='Finished.'; window.speechSynthesis.speak(u);
+}
+function stopSpeaking(){if('speechSynthesis' in window)window.speechSynthesis.cancel();ttsr.textContent='Speech stopped.'}
+
 </script>
 </body>
 </html>
